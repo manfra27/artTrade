@@ -1,0 +1,15 @@
+
+
+In App documentation
+
+Techstack: React 18.3.1, Vite 6.0.5
+Tiers: One tier being a static frontend web application. 
+
+
+
+
+
+
+
+
+
