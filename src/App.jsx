@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './App.css'
 import Shop from './shop.jsx'
+import Gallery from './gallery.jsx'
 
 function App() {
 
-  const [directory, setDirectory] = useState("homepage");
+  const [directory, setDirectory] = useState("home");
 
   const handleDirectory = (newDirectory) => {
     setDirectory(newDirectory);
@@ -13,26 +14,39 @@ function App() {
   return (
     <div className="grid">
       <h1>Valentinas Portfolio</h1>
-      <p>Menu: (next exhibitions, gallery, about, homepage, shop)</p>
-      <p>next exhibitions: date, time, place, artists, pieces</p>
-      <p>gallery: pieces, artists, rent piece</p>
-      <p>rent piece: data entry like address..., digital contract, </p>
-      <p>about: mission, vision, who, contact, </p>
+
+
       {
-        directory === "homepage" ? (
-          <button onClick={() => handleDirectory("shop")}>shop</button>
+        directory === "home" ? (
+          <>
+            <button onClick={() => handleDirectory("shop")}>shop</button>
+            <button onClick={() => handleDirectory("gallery")}>gallery</button>
+            <button >exhibitions</button>
+            <button >about</button>
+            <button >contact</button>
+            <button >mission</button>
+            <button >vision</button>
+          </>
         ) : (<></>)
       }
       {
         directory === "shop" ? (
           <>
-            <button onClick={() => handleDirectory("homepage")}>homepage</button>
+            <button onClick={() => handleDirectory("home")}>home</button>
             <Shop />
           </>
         ) : (<></>)
       }
-
-    </div>
+      {
+        directory === "gallery" ? (
+          <>
+            <button onClick={() => handleDirectory("home")}>home</button>
+            <Gallery />
+          </>
+        ) : (<></>)
+      }
+      <p>c-copyright 2025</p>
+    </div >
   )
 }
 
